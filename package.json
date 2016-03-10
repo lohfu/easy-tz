@@ -1,0 +1,20 @@
+{
+  "name": "easy-tz",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./index.js",
+  "scripts": {
+    "test": "node tests/index.js"
+  },
+  "keywords": [
+    "timezone",
+    "locale",
+    "date",
+    "time"
+  ],
+  "author": "Linus Miller <lohfu@lohfu.io> (https://lohfu.io)",
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^4.5.1"
+  }
+}
