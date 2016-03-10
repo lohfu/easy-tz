@@ -6,10 +6,10 @@ converting JavaScript dates between timezones.
 Since you only require the timezones you need, the footprint is only a few
 bytes.
 
-Easy TZ does this by actually manipulating the date object itself,
+Easy TZ does this by actually manipulating the date instance itself,
 so that calling any of the standard methods will return the correct time.
-This means the actuall UTC/ISO date of the date object will be wrong and
-it is important NOT to pass this converted date object to other libraries
+This means the actuall UTC/ISO date of the date instance will be wrong and
+it is important NOT to pass this converted date instance to other libraries
 or databases. Easy TZ should mainly be used for PRINTING dates in
 a specific timezone.
 
@@ -181,11 +181,11 @@ So far the following are implemented:
 - ./zoneinfo/MT (Mountain Time, not in /usr/share/zoneinfo)
 - ./zoneinfo/PT (Pacific Time, not in /usr/share/zoneinfo)
 - ./zoneinfo/WET
+- ./zoneinfo/America/Chicago
+- ./zoneinfo/America/Denver
+- ./zoneinfo/America/La\_Paz
 - ./zoneinfo/America/Los\_Angeles
 - ./zoneinfo/America/New\_York
-- ./zoneinfo/America/Denver
-- ./zoneinfo/America/Chicago
-- ./zoneinfo/America/La\_Paz
 - ./zoneinfo/Europe/Amsterdam
 - ./zoneinfo/Europe/Athens
 - ./zoneinfo/Europe/Berlin
