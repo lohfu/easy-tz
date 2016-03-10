@@ -4,7 +4,6 @@ function get(date, timezone) {
 }
 
 function from(timezone, date) {
-
 	// TODO make sure date argument is valid
 	if(date instanceof Date && date.tz) {
 		var current = date.getTimezoneOffset();
@@ -13,11 +12,12 @@ function from(timezone, date) {
 
 		delete date.tz;
 	} else if (date.time && date.date) {
-		var time = _.defaults(date.time.split(''), '00:00:00.000Z'.split('')).join('');
+		// fill any missing values... ie turn 01:00 into 01:00:00.000Z
+		var time = date.time +  '00:00:00.000Z'.slice(date.time.length);
 
 		date = new Date(date.date + 'T' + time);
 
-		// TODO make sure this handle time just around DST switch
+		// TODO make sure this handle time just around DST switch, eg 2016-03-27T01:30:00:00Z
 		var tz = get(date, timezone);
 
 		date = new Date(date.getTime() - tz[2] * 60000);
