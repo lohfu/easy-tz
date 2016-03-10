@@ -16,11 +16,18 @@ a specific timezone.
 Easy TZ was mainly created to work with the `Date.prototype.toLocaleString` and
 similar methods.
 
+NOTE: Easy TZ is only meant to be used with NEW dates, not historical. DST is applied
+according to <https://en.wikipedia.org/wiki/Daylight_saving_time_by_country>.
+
+Easy TZ intends to implement all timezones available in a the linux folder
+`/usr/share/zoneinfo`.
+
 ## Installation
 
 ```js
 npm install easy-tz
 ```
+
 
 ## Use
 
@@ -139,7 +146,7 @@ module.exports = function(date) {
 };
 ```
 
-The timezone for Europe/Stockholm looks like this:
+The timezone for CET (./zoneinfo/CET.js) looks like this:
 
 ```js
 module.exports = {
@@ -149,9 +156,43 @@ module.exports = {
 };
 ```
 
+Which is then used in a file, eg ('./zoneinfo/Europe/Stockholm') like so
+
+```js
+module.exports = require('../CET');
+```
+
 If your timezone does not use Daylight Saving Time, simply return an array.
 The timezone for America/La_Paz looks like this.
 
 ```js
 module.exports = [ 'BOT', 'GMT-4', -240 ];
 ```
+
+## Timezones
+
+So far the following are implemented:
+
+- ./zoneinfo/CET
+- ./zoneinfo/CT (Central Time, not in /usr/share/zoneinfo)
+- ./zoneinfo/EET
+- ./zoneinfo/ET (Eastern Time, not in /usr/share/zoneinfo)
+- ./zoneinfo/GB
+- ./zoneinfo/MT (Mountain Time, not in /usr/share/zoneinfo)
+- ./zoneinfo/PT (Pacific Time, not in /usr/share/zoneinfo)
+- ./zoneinfo/WET
+- ./zoneinfo/America/Los\_Angeles
+- ./zoneinfo/America/New\_York
+- ./zoneinfo/America/Denver
+- ./zoneinfo/America/Chicago
+- ./zoneinfo/America/La\_Paz
+- ./zoneinfo/Europe/Amsterdam
+- ./zoneinfo/Europe/Athens
+- ./zoneinfo/Europe/Berlin
+- ./zoneinfo/Europe/Brussels
+- ./zoneinfo/Europe/Chisinau
+- ./zoneinfo/Europe/Copenhagen
+- ./zoneinfo/Europe/Istanbul
+- ./zoneinfo/Europe/Lisbon
+- ./zoneinfo/Europe/London
+- ./zoneinfo/Europe/Stockholm
