@@ -1,1 +1,1 @@
-module.exports = require('../BST');
+module.exports = require('../GB');
