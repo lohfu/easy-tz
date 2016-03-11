@@ -89,7 +89,7 @@ Converts a time from the timezone to the current timezone.
 var tz = require('easy-tz').factory(require('easy-tz/zoneinfo/Europe/Stockholm'));
 
 tz.from({
-	date: '2016-01-01',this.get('startDate'),
+	date: '2016-01-01',
 	time: '11:00'
 });
 ```
@@ -100,27 +100,45 @@ tz.from({
 var locale = require('easy-tz/locales/sv'),
 	tz = require('easy-tz').factory(require('easy-tz/zoneinfo/Europe/Stockholm'));
 
-function printDate(date) {
+function twoDigits(val) {
+	return val >= 10 ? val : '0' + val;
+}
+
+function printLong(date) {
 	return [
 		locale.days[date.getDay()].slice(0,3),
 		date.getDate(),
 		locale.months[date.getMonth()],
 		date.getFullYear(),
-		[ date.getHours(),
-			date.getMinutes() 
-		].map(twoDigits).join(':'),
+		[ date.getHours(), date.getMinutes() ].map(twoDigits).join(':'),
 		date.tz && date.tz[1]
-	]).join(' ');
+	].join(' ');
 }
 
-printDate(tz.to('2016-01-01T12:00:00'));
+function printShort(date) {
+	var dateStr = [
+		date.getFullYear(),
+		date.getMonth() + 1,
+		date.getDate()
+	].map(twoDigits).join('-');
 
-tz.to('2016-01-01T12:00:00').toLocaleString('sv');
+	var timeStr = [ date.getHours(), date.getMinutes() ].map(twoDigits).join(':');
+
+	return dateStr + ' ' + timeStr;
+}
+
+printLong(tzStockholm.to('2016-01-31T12:00:00.000Z'));// sön 31 januari 2016 13:00 CET
+printShort(tzStockholm.to('2016-01-31T12:00:00.000Z'));// 2016-01301 13:00
+
+tzStockholm.to('2016-01-31T12:00:00.000Z').toLocaleString('sv');// 2016-01-31 13:00:00
+tzStockholm.to('2016-01-31T12:00:00.000Z').toLocaleString('en-GB');// 31/01/2016, 13:00:00
+tzStockholm.to('2016-01-31T12:00:00.000Z').toLocaleString('en-US');// 1/31/2016, 1:00:00 PM
 ```
 
 ## Creating your own timezones
 
-Easy TZ provides a `nthOfMonth` helper to assist in creating your own timezones.
+Easy TZ provides a `nthOfMonth` helper to assist in creating your own
+timezones.
 
 ```js
 var nth = require('easy-tz/util/nth-of-month');
@@ -141,8 +159,22 @@ var nthOfMonth = require('../util/nth-of-month');
 
 module.exports = function(date) {
 	var year = date.getUTCFullYear(),
-		dstStart = Date.UTC(year, 2, nthOfMonth(year, 2, 0, -1), 1),
-		dstEnd = Date.UTC(year, 9, nthOfMonth(year, 9, 0, -1), 1);
+		dstStart = Date.UTC(year, 2, nthOfMonth(year, 2, 0, -1), 1),// last sunday in march at 01:00 UTC
+		dstEnd = Date.UTC(year, 9, nthOfMonth(year, 9, 0, -1), 1);// last sunday in october at 01:00 UTC
+
+	return date >= dstStart && date < dstEnd;
+};
+```
+
+For example, `easy-tz/dst/usa` looks like this:
+
+```js
+var nthOfMonth = require('../util/nth-of-month');
+
+module.exports = function(date, timezone) {
+	var year = date.getUTCFullYear(),
+		dstStart = Date.UTC(year, 2, nthOfMonth(year, 2, 0, 2), 2, timezone.standard[0]),// starts second sunday in march at 2 am local time (2am > 3am, "spring forward")
+		dstEnd = Date.UTC(year, 9, nthOfMonth(year, 10, 0, 1), 2, timezone.saving[0]);// ends first sunday in november at 2 am local time (2am > 1am, "fall back")
 
 	return date >= dstStart && date < dstEnd;
 };
@@ -151,24 +183,24 @@ module.exports = function(date) {
 The timezone for CET (./zoneinfo/CET.js) looks like this:
 
 ```js
-module.exports = {
-	dst: require('../dst/europe'),
-	saving: [ 'CEST', 'GMT+2',	120 ],
-	standard: [ 'CET', 'GMT+1', 60 ]
-};
+module.exports = [ 60, 'CET', 'GMT+1', 'UTC+1' ];
 ```
 
-Which is then used in a file, eg ('./zoneinfo/Europe/Stockholm') like so
+Which is then used in a file, eg ('./zoneinfo/Europe/Stockholm') like so:
 
 ```js
-module.exports = require('../CET');
+module.exports = {
+	dst: require('../../dst/europe'),
+	saving: require('../CEST'),
+	standard: require('../CET')
+};
 ```
 
 If your timezone does not use Daylight Saving Time, simply return an array.
 The timezone for America/La_Paz looks like this.
 
 ```js
-module.exports = [ 'BOT', 'GMT-4', -240 ];
+module.exports = [ -240, 'BOT', 'GMT-4', 'UTC-4' ];
 ```
 
 ## Timezones

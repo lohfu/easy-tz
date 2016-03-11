@@ -84,3 +84,44 @@ test('tz: Europe/Stockholm', function(t) {
 	t.equal(tzs.se.to(Date.UTC(2016,6,1,15,0)).toLocaleString('sv'), '2016-07-01 17:00:00');
 	t.end();
 });
+
+var locale = require('../locales/sv'),
+	tzStockholm = require('../').factory(require('../zoneinfo/Europe/Stockholm'));
+
+function twoDigits(val) {
+	return val >= 10 ? val : '0' + val;
+}
+
+function printLong(date) {
+	return [
+		locale.days[date.getDay()].slice(0,3),
+		date.getDate(),
+		locale.months[date.getMonth()],
+		date.getFullYear(),
+		[ date.getHours(), date.getMinutes() ].map(twoDigits).join(':'),
+		date.tz && date.tz[1]
+	].join(' ');
+}
+
+function printShort(date) {
+	var dateStr = [
+		date.getFullYear(),
+		date.getMonth() + 1,
+		date.getDate()
+	].map(twoDigits).join('-');
+
+	var timeStr = [ date.getHours(), date.getMinutes() ].map(twoDigits).join(':');
+
+	return dateStr + ' ' + timeStr;
+}
+//test('tz: Custom Output', function(t)
+//
+
+console.log(printLong(tzStockholm.to('2016-01-31T12:00:00.000Z')));// fre 1 januari 2016 13:00 CET
+console.log(printShort(tzStockholm.to('2016-01-31T12:00:00.000Z')));// 2016-01-01 13:00
+
+console.log(tzStockholm.to('2016-01-31T12:00:00.000Z').toLocaleString('sv'));// 2016-01-01 13:00:00
+console.log(tzStockholm.to('2016-01-31T12:00:00.000Z').toLocaleString('en-GB'));// 01/01/2016, 13:00:00
+console.log(tzStockholm.to('2016-01-31T12:00:00.000Z').toLocaleString('en-US'));// 1/1/2016, 1:00:00 PM
+
+
