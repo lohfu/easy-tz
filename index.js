@@ -1,6 +1,6 @@
 function get(date, timezone) {
 	// check if timezone uses DST, and then test if it is in dst
-	return timezone.dst ? timezone[timezone.dst(date) ? 'saving' : 'standard'] : timezone;
+	return timezone.dst ? timezone[timezone.dst(date, timezone) ? 'saving' : 'standard'] : timezone;
 }
 
 function from(timezone, date) {
@@ -8,7 +8,7 @@ function from(timezone, date) {
 	if(date instanceof Date && date.tz) {
 		var current = date.getTimezoneOffset();
 
-		date = new Date(date.getTime() - (date.tz[2] + current) * 60000);
+		date = new Date(date.getTime() - (date.tz[0] + current) * 60000);
 
 		delete date.tz;
 	} else if (date.time && date.date) {
@@ -20,7 +20,7 @@ function from(timezone, date) {
 		// TODO make sure this handle time just around DST switch, eg 2016-03-27T01:30:00:00Z
 		var tz = get(date, timezone);
 
-		date = new Date(date.getTime() - tz[2] * 60000);
+		date = new Date(date.getTime() - tz[0] * 60000);
 	}
 
 
@@ -34,8 +34,8 @@ function to(timezone, date) {
 	var tz = get(date, timezone),
 		current = date.getTimezoneOffset();
 
-	// use timezones offset to calculate new date, tz[2] is in minutes, so multiply by 60000 (60 seconds * 10000 milliseconds)
-	date = new Date(date.getTime() + (tz[2] + current) * 60000);
+	// use timezones offset to calculate new date, tz[0] is in minutes, so multiply by 60000 (60 seconds * 10000 milliseconds)
+	date = new Date(date.getTime() + (tz[0] + current) * 60000);
 
 	// save reference to tz
 	date.tz = tz;

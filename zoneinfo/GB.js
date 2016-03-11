@@ -1,5 +1,5 @@
 module.exports = {
 	dst: require('../dst/europe'),
-	saving: [ 'BST', 'GMT+1', 60 ],
-	standard: [ 'GMT', 'GMT', 0 ]
+	saving: [ 60, 'BST', 'GMT+1', 'UTC+1' ],
+	standard: [ 0, 'GMT', 'GMT', 'UTC' ]
 };
