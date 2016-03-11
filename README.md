@@ -207,24 +207,27 @@ module.exports = [ -240, 'BOT', 'GMT-4', 'UTC-4' ];
 
 So far the following are implemented:
 
-- ./zoneinfo/ACST
-- ./zoneinfo/AEDT
-- ./zoneinfo/AEST
-- ./zoneinfo/AWST
-- ./zoneinfo/CEST (Central Europe Summer Time, not in `/usr/share/zoneinfo`)
+- ./zoneinfo/ACST (Australian Central Standard Time, not in `/usr/share/zoneinfo/`)
+- ./zoneinfo/AEDT (Australian Eastern Dayling Time, not in `/usr/share/zoneinfo/`)
+- ./zoneinfo/AEST (Australian Eastern Standard Time, not in `/usr/share/zoneinfo/`)
+- ./zoneinfo/AWST (Australian Western Standard Time, not in `/usr/share/zoneinfo/`)
+- ./zoneinfo/CEST (Central Europe Summer Time, not in `/usr/share/zoneinfo/`)
 - ./zoneinfo/CET
 - ./zoneinfo/EAT (Eastern African Time, not in `/usr/share/zoneinfo/`)
-- ./zoneinfo/EEST (Eastern Europe Summer Time, not in `/usr/share/zoneinfo`)
+- ./zoneinfo/EEST (Eastern Europe Summer Time, not in `/usr/share/zoneinfo/`)
 - ./zoneinfo/EET
 - ./zoneinfo/EET
+- ./zoneinfo/FET (Further-eastern Europe Time, not in `/usr/share/zoneinfo/`)
 - ./zoneinfo/GB
 - ./zoneinfo/GB
 - ./zoneinfo/GMT
+- ./zoneinfo/IST (Moscow Time, not in `/usr/share/zoneinfo/`)
+- ./zoneinfo/MSK (Moscow Time, not in `/usr/share/zoneinfo/`)
 - ./zoneinfo/US
 - ./zoneinfo/UTC
 - ./zoneinfo/WAST
 - ./zoneinfo/WAT
-- ./zoneinfo/WEST (Western Europe Summer Time, not in `/usr/share/zoneinfo`)
+- ./zoneinfo/WEST (Western Europe Summer Time, not in `/usr/share/zoneinfo/`)
 - ./zoneinfo/WET
 - ./zoneinfo/Africa/Addis_Adaba
 - ./zoneinfo/Africa/Brazzaville
@@ -259,6 +262,66 @@ So far the following are implemented:
 - ./zoneinfo/Asia/Tokyo
 - ./zoneinfo/Australia/Brisbane
 - ./zoneinfo/Australia/Sydney
+- ./zoneinfo/Europe/Amsterdam
+- ./zoneinfo/Europe/Andorra
+- ./zoneinfo/Europe/Athens
+- ./zoneinfo/Europe/Barcelona
+- ./zoneinfo/Europe/Belfast
+- ./zoneinfo/Europe/Belgrade
+- ./zoneinfo/Europe/Berlin
+- ./zoneinfo/Europe/Bratislava
+- ./zoneinfo/Europe/Brussels
+- ./zoneinfo/Europe/Bucharest
+- ./zoneinfo/Europe/Budapest
+- ./zoneinfo/Europe/Busingen
+- ./zoneinfo/Europe/Chisinau
+- ./zoneinfo/Europe/Copenhagen
+- ./zoneinfo/Europe/Dublin
+- ./zoneinfo/Europe/Gibraltar
+- ./zoneinfo/Europe/Guernsey
+- ./zoneinfo/Europe/Helsinki
+- ./zoneinfo/Europe/Isle_of_Man
+- ./zoneinfo/Europe/Istanbul
+- ./zoneinfo/Europe/Jersey
+- ./zoneinfo/Europe/Kaliningrad
+- ./zoneinfo/Europe/Kiev
+- ./zoneinfo/Europe/Lisbon
+- ./zoneinfo/Europe/Ljubljana
+- ./zoneinfo/Europe/London
+- ./zoneinfo/Europe/Luxembourg
+- ./zoneinfo/Europe/Madrid
+- ./zoneinfo/Europe/Malta
+- ./zoneinfo/Europe/Mariehamn
+- ./zoneinfo/Europe/Minsk
+- ./zoneinfo/Europe/Monaco
+- ./zoneinfo/Europe/Moscow
+- ./zoneinfo/Europe/Nicosia
+- ./zoneinfo/Europe/Oslo
+- ./zoneinfo/Europe/Paris
+- ./zoneinfo/Europe/Podgorica
+- ./zoneinfo/Europe/Prague
+- ./zoneinfo/Europe/Riga
+- ./zoneinfo/Europe/Rome
+- ./zoneinfo/Europe/Samara
+- ./zoneinfo/Europe/San_Morino
+- ./zoneinfo/Europe/Sarajevo
+- ./zoneinfo/Europe/Simferopol
+- ./zoneinfo/Europe/Skopje
+- ./zoneinfo/Europe/Sofia
+- ./zoneinfo/Europe/Stockholm
+- ./zoneinfo/Europe/Tallinn
+- ./zoneinfo/Europe/Tirane
+- ./zoneinfo/Europe/Tiraspol
+- ./zoneinfo/Europe/Uzhgorod
+- ./zoneinfo/Europe/Vaduz
+- ./zoneinfo/Europe/Vatican
+- ./zoneinfo/Europe/Vienna
+- ./zoneinfo/Europe/Vilnius
+- ./zoneinfo/Europe/Volgograd
+- ./zoneinfo/Europe/Warsaw
+- ./zoneinfo/Europe/Zagreb
+- ./zoneinfo/Europe/Zaporozhye
+- ./zoneinfo/Europe/Zurich
 - ./zoneinfo/US/Alaska
 - ./zoneinfo/US/Aleutian
 - ./zoneinfo/US/Central
@@ -266,13 +329,3 @@ So far the following are implemented:
 - ./zoneinfo/US/Hawaii
 - ./zoneinfo/US/Mountain
 - ./zoneinfo/US/Pactific
-- ./zoneinfo/Europe/Amsterdam
-- ./zoneinfo/Europe/Athens
-- ./zoneinfo/Europe/Berlin
-- ./zoneinfo/Europe/Brussels
-- ./zoneinfo/Europe/Chisinau
-- ./zoneinfo/Europe/Copenhagen
-- ./zoneinfo/Europe/Istanbul
-- ./zoneinfo/Europe/Lisbon
-- ./zoneinfo/Europe/London
-- ./zoneinfo/Europe/Stockholm
