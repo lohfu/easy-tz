@@ -211,23 +211,22 @@ So far the following are implemented:
 - ./zoneinfo/AEDT (Australian Eastern Dayling Time, not in `/usr/share/zoneinfo/`)
 - ./zoneinfo/AEST (Australian Eastern Standard Time, not in `/usr/share/zoneinfo/`)
 - ./zoneinfo/AWST (Australian Western Standard Time, not in `/usr/share/zoneinfo/`)
-- ./zoneinfo/CEST (Central Europe Summer Time, not in `/usr/share/zoneinfo/`)
+- ./zoneinfo/CEST (Central European Summer Time, not in `/usr/share/zoneinfo/`)
 - ./zoneinfo/CET
-- ./zoneinfo/EAT (Eastern African Time, not in `/usr/share/zoneinfo/`)
-- ./zoneinfo/EEST (Eastern Europe Summer Time, not in `/usr/share/zoneinfo/`)
-- ./zoneinfo/EET
+- ./zoneinfo/EAT (East Africa Time, not in `/usr/share/zoneinfo/`)
+- ./zoneinfo/EEST (Eastern European Summer Time, not in `/usr/share/zoneinfo/`)
 - ./zoneinfo/EET
 - ./zoneinfo/FET (Further-eastern Europe Time, not in `/usr/share/zoneinfo/`)
 - ./zoneinfo/GB
 - ./zoneinfo/GB
 - ./zoneinfo/GMT
-- ./zoneinfo/IST (Moscow Time, not in `/usr/share/zoneinfo/`)
+- ./zoneinfo/IST (Irish Standard Time, not in `/usr/share/zoneinfo/`) NOTE: there is also Indian Standard Time, and Israel Standard Time
 - ./zoneinfo/MSK (Moscow Time, not in `/usr/share/zoneinfo/`)
 - ./zoneinfo/US
 - ./zoneinfo/UTC
-- ./zoneinfo/WAST
-- ./zoneinfo/WAT
-- ./zoneinfo/WEST (Western Europe Summer Time, not in `/usr/share/zoneinfo/`)
+- ./zoneinfo/WAST (West Africa Summer Time, not in `/usr/share/zoneinfo/`)
+- ./zoneinfo/WAT (West Africa Time, not in `/usr/share/zoneinfo/`)
+- ./zoneinfo/WEST (Western European Summer Time, not in `/usr/share/zoneinfo/`)
 - ./zoneinfo/WET
 - ./zoneinfo/Africa/Addis_Adaba
 - ./zoneinfo/Africa/Brazzaville
