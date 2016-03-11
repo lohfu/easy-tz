@@ -16,11 +16,13 @@ a specific timezone.
 Easy TZ was mainly created to work with the `Date.prototype.toLocaleString` and
 similar methods.
 
-NOTE: Easy TZ is only meant to be used with NEW dates, not historical. DST is applied
-according to <https://en.wikipedia.org/wiki/Daylight_saving_time_by_country>.
-
 Easy TZ intends to implement all timezones defined by the IANA time zone database (available in UNIX folder
 `/usr/share/zoneinfo`).
+
+NOTE: ALWAYS save your dates in UTC!
+
+NOTE: Easy TZ is only meant to be used with NEW dates, not historical. DST is applied
+according to <https://en.wikipedia.org/wiki/Daylight_saving_time_by_country>.
 
 ## Installation
 
@@ -173,14 +175,58 @@ module.exports = [ 'BOT', 'GMT-4', -240 ];
 
 So far the following are implemented:
 
-- ./zoneinfo/CET
+- ./zoneinfo/ACST
+- ./zoneinfo/AEDT
+- ./zoneinfo/AEST
+- ./zoneinfo/AWST
 - ./zoneinfo/CEST (Central Europe Summer Time, not in `/usr/share/zoneinfo`)
-- ./zoneinfo/EET
-- ./zoneinfo/EEST (Eastern Europe Summer Time, not in `/usr/share/zoneinfo`)
+- ./zoneinfo/CET
 - ./zoneinfo/EAT (Eastern African Time, not in `/usr/share/zoneinfo/`)
+- ./zoneinfo/EEST (Eastern Europe Summer Time, not in `/usr/share/zoneinfo`)
+- ./zoneinfo/EET
+- ./zoneinfo/EET
 - ./zoneinfo/GB
-- ./zoneinfo/WET
+- ./zoneinfo/GB
+- ./zoneinfo/GMT
+- ./zoneinfo/US
+- ./zoneinfo/UTC
+- ./zoneinfo/WAST
+- ./zoneinfo/WAT
 - ./zoneinfo/WEST (Western Europe Summer Time, not in `/usr/share/zoneinfo`)
+- ./zoneinfo/WET
+- ./zoneinfo/Africa/Addis_Adaba
+- ./zoneinfo/Africa/Brazzaville
+- ./zoneinfo/Africa/Cairo
+- ./zoneinfo/Africa/Casablanca
+- ./zoneinfo/Africa/Dakar
+- ./zoneinfo/Africa/Johannesburg
+- ./zoneinfo/Africa/Lagos
+- ./zoneinfo/Africa/Mogadishu
+- ./zoneinfo/Africa/Nairobi
+- ./zoneinfo/Africa/Timbuktu
+- ./zoneinfo/Africa/Tripoli
+- ./zoneinfo/Africa/Windhoek
+- ./zoneinfo/America/Chicago
+- ./zoneinfo/America/Denver
+- ./zoneinfo/America/La_Paz
+- ./zoneinfo/America/Los_Angeles
+- ./zoneinfo/America/New_York
+- ./zoneinfo/Antarctica/Casey
+- ./zoneinfo/Antarctica/Davis
+- ./zoneinfo/Antarctica/DumontDUrville
+- ./zoneinfo/Antarctica/Macquarie
+- ./zoneinfo/Antarctica/Mawson
+- ./zoneinfo/Antarctica/McMurdo
+- ./zoneinfo/Antarctica/Palmer
+- ./zoneinfo/Antarctica/Rothera
+- ./zoneinfo/Antarctica/South_Pole
+- ./zoneinfo/Antarctica/Syowa
+- ./zoneinfo/Antarctica/Troll
+- ./zoneinfo/Antarctica/Vostok
+- ./zoneinfo/Asia/Singapore
+- ./zoneinfo/Asia/Tokyo
+- ./zoneinfo/Australia/Brisbane
+- ./zoneinfo/Australia/Sydney
 - ./zoneinfo/US/Alaska
 - ./zoneinfo/US/Aleutian
 - ./zoneinfo/US/Central
