@@ -1,1 +1,5 @@
-module.exports = require('../WET');
+module.exports = {
+	dst: require('../../dst/europe'),
+	standard: require('../WET'),
+	saving: require('../WEST')
+};

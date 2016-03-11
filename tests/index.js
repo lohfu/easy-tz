@@ -46,6 +46,25 @@ test('dst: europe', function(t) {
 	t.end();
 });
 
+var dst2 = require('../dst/usa');
+
+var newYork = require('../zoneinfo/America/New_York');
+
+
+test('dst: America/New_York', function(t) {
+	t.equal(dst2(new Date(Date.UTC(2010,1,28)), newYork), false);
+	t.equal(dst2(new Date(Date.UTC(2010,7,28)), newYork), true);
+	//t.equal(dst(new Date(Date.UTC(2010,2,28,0,59))), false);
+	//t.equal(dst(new Date(Date.UTC(2010,2,28,1,0))), true);
+	//t.equal(dst(new Date(Date.UTC(2010,9,31,0,59))), true);
+	//t.equal(dst(new Date(Date.UTC(2010,9,31,1,0))), false);
+	//t.equal(dst(new Date(Date.UTC(2016,2,27,0,59))), false);
+	//t.equal(dst(new Date(Date.UTC(2016,2,27,1,0))), true);
+	//t.equal(dst(new Date(Date.UTC(2016,9,30,0,59))), true);
+	//t.equal(dst(new Date(Date.UTC(2016,9,30,1,0))), false);
+	t.end();
+});
+
 var tz = require('../');
 
 var tzs = {

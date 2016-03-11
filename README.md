@@ -19,8 +19,8 @@ similar methods.
 NOTE: Easy TZ is only meant to be used with NEW dates, not historical. DST is applied
 according to <https://en.wikipedia.org/wiki/Daylight_saving_time_by_country>.
 
-Easy TZ intends to implement all timezones available in a the linux folder
-`/usr/share/zoneinfo`.
+Easy TZ intends to implement all timezones defined by the IANA time zone database (available in UNIX folder
+`/usr/share/zoneinfo`).
 
 ## Installation
 
@@ -107,7 +107,7 @@ function printDate(date) {
 		[ date.getHours(),
 			date.getMinutes() 
 		].map(twoDigits).join(':'),
-		date.tz && date.tz[0]
+		date.tz && date.tz[1]
 	]).join(' ');
 }
 
@@ -174,18 +174,20 @@ module.exports = [ 'BOT', 'GMT-4', -240 ];
 So far the following are implemented:
 
 - ./zoneinfo/CET
-- ./zoneinfo/CT (Central Time, not in /usr/share/zoneinfo)
+- ./zoneinfo/CEST (Central Europe Summer Time, not in `/usr/share/zoneinfo`)
 - ./zoneinfo/EET
-- ./zoneinfo/ET (Eastern Time, not in /usr/share/zoneinfo)
+- ./zoneinfo/EEST (Eastern Europe Summer Time, not in `/usr/share/zoneinfo`)
+- ./zoneinfo/EAT (Eastern African Time, not in `/usr/share/zoneinfo/`)
 - ./zoneinfo/GB
-- ./zoneinfo/MT (Mountain Time, not in /usr/share/zoneinfo)
-- ./zoneinfo/PT (Pacific Time, not in /usr/share/zoneinfo)
 - ./zoneinfo/WET
-- ./zoneinfo/America/Chicago
-- ./zoneinfo/America/Denver
-- ./zoneinfo/America/La\_Paz
-- ./zoneinfo/America/Los\_Angeles
-- ./zoneinfo/America/New\_York
+- ./zoneinfo/WEST (Western Europe Summer Time, not in `/usr/share/zoneinfo`)
+- ./zoneinfo/US/Alaska
+- ./zoneinfo/US/Aleutian
+- ./zoneinfo/US/Central
+- ./zoneinfo/US/Eastern
+- ./zoneinfo/US/Hawaii
+- ./zoneinfo/US/Mountain
+- ./zoneinfo/US/Pactific
 - ./zoneinfo/Europe/Amsterdam
 - ./zoneinfo/Europe/Athens
 - ./zoneinfo/Europe/Berlin

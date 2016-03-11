@@ -1,1 +1,1 @@
-module.exports = [ 'BOT', 'GMT-4', 240 ];
+module.exports = [ 240, 'BOT', 'GMT-4', 'UTC-4' ];
