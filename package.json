@@ -12,7 +12,7 @@
     "date",
     "time"
   ],
-  "author": "Linus Miller <lohfu@lohfu.io> (https://lohfu.io)",
+  "author": "Linus Miller <lohfu@lohfu.io> (https://lohfu.io/)",
   "license": "MIT",
   "devDependencies": {
     "tape": "^4.5.1"
