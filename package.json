@@ -1,6 +1,6 @@
 {
   "name": "easy-tz",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "",
   "jsnext:main": "./index.js",
   "browser": "./cjs/index.js",
