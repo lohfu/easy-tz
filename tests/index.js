@@ -114,14 +114,12 @@ function printShort(date) {
 
 	return dateStr + ' ' + timeStr;
 }
-//test('tz: Custom Output', function(t)
-//
 
-console.log(printLong(tzStockholm.to('2016-01-31T12:00:00.000Z')));// fre 1 januari 2016 13:00 CET
-console.log(printShort(tzStockholm.to('2016-01-31T12:00:00.000Z')));// 2016-01-01 13:00
+console.log(printLong(tzStockholm.to('2016-01-31T12:00:00.000Z')));// sön 31 januari 2016 13:00 CET
+console.log(printShort(tzStockholm.to('2016-01-31T12:00:00.000Z')));// 2016-01301 13:00
 
-console.log(tzStockholm.to('2016-01-31T12:00:00.000Z').toLocaleString('sv'));// 2016-01-01 13:00:00
-console.log(tzStockholm.to('2016-01-31T12:00:00.000Z').toLocaleString('en-GB'));// 01/01/2016, 13:00:00
-console.log(tzStockholm.to('2016-01-31T12:00:00.000Z').toLocaleString('en-US'));// 1/1/2016, 1:00:00 PM
+console.log(tzStockholm.to('2016-01-31T12:00:00.000Z').toLocaleString('sv'));// 2016-01-31 13:00:00
+console.log(tzStockholm.to('2016-01-31T12:00:00.000Z').toLocaleString('en-GB'));// 31/01/2016, 13:00:00
+console.log(tzStockholm.to('2016-01-31T12:00:00.000Z').toLocaleString('en-US'));// 1/31/2016, 1:00:00 PM
 
 
