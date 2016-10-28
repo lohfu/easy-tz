@@ -1,1 +1,3 @@
-module.exports = require('../GB');
+import GB from '../GB';
+
+export default GB;

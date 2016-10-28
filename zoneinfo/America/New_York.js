@@ -1,1 +1,3 @@
-module.exports = require('../US/Eastern');
+import Eastern from '../US/Eastern';
+
+export default Eastern;

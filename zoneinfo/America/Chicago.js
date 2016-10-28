@@ -1,1 +1,3 @@
-module.exports = require('../US/Central');
+import Central from '../US/Central';
+
+export default Central;

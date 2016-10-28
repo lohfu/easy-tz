@@ -1,10 +1,10 @@
 function twoDigits(val) {
-  return val >= 10 ? val : '0' + val;
+  return val >= 10 ? val : `0${val}`;
 }
 
-var convert = [
-  [/z{1,2}/, (date) => 'EST, CST, MST, PST'],
-  [/Z{1,2}/, (date) => '+12:00	Offset from UTC as +-HH:mm, +-HHmm, or Z'],
+const convert = [
+  [/z{1,2}/, () => 'EST, CST, MST, PST'],
+  [/Z{1,2}/, () => '+12:00 Offset from UTC as +-HH:mm, +-HHmm, or Z'],
   [/yy|YY/, (date) => date.getFullYear().toString().slice(2)],
   [/YYYY|yyyy/, (date) => date.getFullYear()],
   ['M', (date) => date.getMonth() + 1],
@@ -26,8 +26,7 @@ var convert = [
   ['SSS', (date) => date.getMilliseconds()],
 ].reverse();
 
-// export default function format(date, str) {
-module.exports = function format(locale, str, date) {
+export default (locale, str, date) => {
   if (!(date instanceof Date)) date = new Date(date);
 
   return convert.reduce((str, [pattern, fnc]) => {

@@ -1,1 +1,3 @@
-module.exports = require('../US/Mountain');
+import Mountain from '../US/Mountain';
+
+export default Mountain;

@@ -1,5 +1,10 @@
-module.exports = {
-	dst: require('../../dst/europe'),
-	standard: require('../GMT'),
-	saving: require('../WEST')
+import dst from '../../dst/europe';
+
+import GMT from '../GMT';
+import WEST from '../WEST';
+
+export default {
+  dst,
+  standard: GMT,
+  saving: WEST,
 };

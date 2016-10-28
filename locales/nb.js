@@ -1,1 +1,3 @@
-module.exports = require('./no');
+import no from './no';
+
+export default no;

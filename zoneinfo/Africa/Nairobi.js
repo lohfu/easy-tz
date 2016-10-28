@@ -1,1 +1,3 @@
-module.exports = require('../EAT');
+import EAT from '../EAT';
+
+export default EAT;

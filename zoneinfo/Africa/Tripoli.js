@@ -1,1 +1,3 @@
-module.exports = require('../EET');
+import EET from '../EET';
+
+export default EET;

@@ -1,1 +1,3 @@
-module.exports = require('../GMT');
+import GMT from '../GMT';
+
+export default GMT;

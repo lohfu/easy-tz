@@ -1,5 +1,7 @@
-module.exports = {
-	dst: require('../dst/namibia'),
-	standard: require('../WAT'),
-	saving: require('../WAST')
+import dst from '../../dst/namibia';
+
+export default {
+  dst,
+  standard: require('../WAT'),
+  saving: require('../WAST'),
 };

@@ -1,1 +1,1 @@
-module.exports = [ 600, 'UTC+10', 'GMT+10', 'UTC+10' ];
+export default [600, 'UTC+10', 'GMT+10', 'UTC+10'];

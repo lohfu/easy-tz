@@ -1,1 +1,3 @@
-module.exports = require('../FET');
+import FET from '../FET';
+
+export default FET;

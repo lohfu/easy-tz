@@ -1,1 +1,3 @@
-module.exports = require('./Hawaii');
+import hawaii from './Hawaii';
+
+export default hawaii;

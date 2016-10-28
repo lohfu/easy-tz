@@ -1,5 +1,8 @@
-module.exports = {
-	dst: ,
-	standard: require('../AEST'),
-	saving: require('../AEDT')
+import AEST from '../AEST';
+import AEDT from '../AEDT';
+
+export default {
+  dst: null,
+  standard: AEST,
+  saving: AEDT,
 };

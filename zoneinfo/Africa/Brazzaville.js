@@ -1,1 +1,3 @@
-module.exports = require('../WAT');
+import WAT from '../WAT';
+
+export default WAT;

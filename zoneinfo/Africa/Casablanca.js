@@ -1,1 +1,3 @@
-module.exports = require('../WET');
+import WET from '../WET';
+
+export default WET;

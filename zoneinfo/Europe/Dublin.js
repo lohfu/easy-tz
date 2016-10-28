@@ -1,5 +1,10 @@
-module.exports = {
-	dst: require('../../dst/europe'),
-	standard: require('../WET'),
-	saving: require('../IST')
+import dst from '../../dst/europe';
+
+import WET from '../WET';
+import IST from '../IST';
+
+export default {
+  dst,
+  standard: WET,
+  saving: IST,
 };

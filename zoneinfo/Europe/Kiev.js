@@ -1,5 +1,10 @@
-module.exports = {
-	dst: require('../../dst/europe'),
-	standard: require('../EET'),
-	saving: require('../EEST')
+import dst from '../../dst/europe';
+
+import EET from '../EET';
+import EEST from '../EEST';
+
+export default {
+  dst,
+  standard: EET,
+  saving: EEST,
 };

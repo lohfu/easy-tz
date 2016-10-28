@@ -1,5 +1,10 @@
-module.exports = {
-	dst: require('../../dst/europe'),
-	standard: require('../CET'),
-	saving: require('../CEST')
+import dst from '../../dst/europe';
+
+import CET from '../CET';
+import CEST from '../CEST';
+
+export default {
+  dst,
+  standard: CET,
+  saving: CEST,
 };
