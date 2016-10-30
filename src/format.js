@@ -29,6 +29,11 @@ const convert = [
 export default (locale, str, date) => {
   if (!(date instanceof Date)) date = new Date(date);
 
+  if (isNaN(date.getTime())) {
+    // should return localized 'Invalid Date'
+    return date.toString();
+  }
+
   return convert.reduce((str, [pattern, fnc]) => {
     const arr = str.split(pattern);
 
