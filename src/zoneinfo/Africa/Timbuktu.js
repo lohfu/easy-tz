@@ -1,3 +1,3 @@
-import GMT from '../GMT'
+import GMT from '../GMT.js'
 
 export default GMT

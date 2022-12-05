@@ -1,3 +1,3 @@
-import EAT from '../EAT'
+import EAT from '../EAT.js'
 
 export default EAT

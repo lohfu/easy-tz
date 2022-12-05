@@ -1,7 +1,7 @@
-import dst from '../../dst/europe'
+import dst from '../../dst/europe.js'
 
-import GMT from '../GMT'
-import WEST from '../WEST'
+import GMT from '../GMT.js'
+import WEST from '../WEST.js'
 
 export default {
   dst,

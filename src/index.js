@@ -49,8 +49,8 @@ export function factory(timezone) {
   }
 
   return {
-    to: to.bind(void 0, timezone),
+    to: to.bind(undefined, timezone),
 
-    from: from.bind(void 0, timezone),
+    from: from.bind(undefined, timezone),
   }
 }

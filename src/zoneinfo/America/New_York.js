@@ -1,3 +1,3 @@
-import Eastern from '../US/Eastern'
+import Eastern from '../US/Eastern.js'
 
 export default Eastern

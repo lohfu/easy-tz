@@ -1,6 +1,6 @@
-import dst from '../../dst/europe'
+import dst from '../../dst/europe.js'
 
-import GMT from '../GMT'
+import GMT from '../GMT.js'
 
 export default {
   dst,

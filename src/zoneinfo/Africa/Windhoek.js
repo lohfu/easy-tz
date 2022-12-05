@@ -1,4 +1,4 @@
-import dst from '../../dst/namibia'
+import dst from '../../dst/namibia.js'
 
 export default {
   dst,

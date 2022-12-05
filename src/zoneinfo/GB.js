@@ -1,4 +1,4 @@
-import dst from '../dst/europe'
+import dst from '../dst/europe.js'
 
 export default {
   dst,

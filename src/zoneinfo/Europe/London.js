@@ -1,3 +1,3 @@
-import GB from '../GB'
+import GB from '../GB.js'
 
 export default GB

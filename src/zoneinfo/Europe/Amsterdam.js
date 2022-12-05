@@ -1,7 +1,7 @@
-import dst from '../../dst/europe'
+import dst from '../../dst/europe.js'
 
-import CET from '../CET'
-import CEST from '../CEST'
+import CET from '../CET.js'
+import CEST from '../CEST.js'
 
 export default {
   dst,

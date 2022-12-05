@@ -1,7 +1,7 @@
-import dst from '../../dst/europe'
+import dst from '../../dst/europe.js'
 
-import WET from '../WET'
-import WEST from '../WEST'
+import WET from '../WET.js'
+import WEST from '../WEST.js'
 
 export default {
   dst,

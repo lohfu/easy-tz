@@ -1,6 +1,19 @@
-const test = require('tape')
+import test from 'tape'
+import nth from '../src/util/nth-of-month.js'
+import dst from '../src/dst/europe.js'
+import dst2 from '../src/dst/usa.js'
+import * as etz from '../src/index.js'
+// import locale from '../src/locales/sv.js'
+import ziUTC from '../src/zoneinfo/UTC.js'
+import ziNewYork from '../src/zoneinfo/America/New_York.js'
+import ziLondon from '../src/zoneinfo/Europe/London.js'
+import ziStockholm from '../src/zoneinfo/Europe/Stockholm.js'
 
-const nth = require('../util/nth-of-month')
+const tzs = {
+  utc: etz.factory(ziUTC),
+  uk: etz.factory(ziLondon),
+  se: etz.factory(ziStockholm),
+}
 
 test('nth of month', (t) => {
   t.equal(nth(2016, 9, 0, -1), 30)
@@ -30,8 +43,6 @@ test('nth of month', (t) => {
   t.end()
 })
 
-const dst = require('../dst/europe')
-
 test('dst: europe', (t) => {
   t.equal(dst(new Date(Date.UTC(2010, 2, 28, 0, 59))), false)
   t.equal(dst(new Date(Date.UTC(2010, 2, 28, 1, 0))), true)
@@ -44,13 +55,9 @@ test('dst: europe', (t) => {
   t.end()
 })
 
-const dst2 = require('../dst/usa')
-
-const newYork = require('../zoneinfo/America/New_York')
-
 test('dst: America/New_York', (t) => {
-  t.equal(dst2(new Date(Date.UTC(2010, 1, 28)), newYork), false)
-  t.equal(dst2(new Date(Date.UTC(2010, 7, 28)), newYork), true)
+  t.equal(dst2(new Date(Date.UTC(2010, 1, 28)), ziNewYork), false)
+  t.equal(dst2(new Date(Date.UTC(2010, 7, 28)), ziNewYork), true)
   // t.equal(dst(new Date(Date.UTC(2010,2,28,0,59))), false);
   // t.equal(dst(new Date(Date.UTC(2010,2,28,1,0))), true);
   // t.equal(dst(new Date(Date.UTC(2010,9,31,0,59))), true);
@@ -61,14 +68,6 @@ test('dst: America/New_York', (t) => {
   // t.equal(dst(new Date(Date.UTC(2016,9,30,1,0))), false);
   t.end()
 })
-
-const tz = require('../')
-
-const tzs = {
-  utc: tz.factory(require('../zoneinfo/UTC')),
-  uk: tz.factory(require('../zoneinfo/Europe/London')),
-  se: tz.factory(require('../zoneinfo/Europe/Stockholm')),
-}
 
 test('tz: Europe/London', (t) => {
   t.equal(tzs.uk.to(Date.UTC(2016, 11, 1, 15, 0)).toLocaleString('sv'), '2016-12-01 15:00:00')
@@ -82,31 +81,28 @@ test('tz: Europe/Stockholm', (t) => {
   t.end()
 })
 
-import locale from '../locales/sv'
-const tzStockholm = require('../').factory(require('../zoneinfo/Europe/Stockholm'))
+// function twoDigits(val) {
+//   return val >= 10 ? val : `0${val}`
+// }
 
-function twoDigits(val) {
-  return val >= 10 ? val : `0${val}`
-}
+// function printLong(date) {
+//   return [
+//     locale.days[date.getDay()].slice(0, 3),
+//     date.getDate(),
+//     locale.months[date.getMonth()],
+//     date.getFullYear(),
+//     [date.getHours(), date.getMinutes()].map(twoDigits).join(':'),
+//     date.tz && date.tz[1],
+//   ].join(' ')
+// }
 
-function printLong(date) {
-  return [
-    locale.days[date.getDay()].slice(0, 3),
-    date.getDate(),
-    locale.months[date.getMonth()],
-    date.getFullYear(),
-    [date.getHours(), date.getMinutes()].map(twoDigits).join(':'),
-    date.tz && date.tz[1],
-  ].join(' ')
-}
+// function printShort(date) {
+//   const dateStr = [date.getFullYear(), date.getMonth() + 1, date.getDate()].map(twoDigits).join('-')
 
-function printShort(date) {
-  const dateStr = [date.getFullYear(), date.getMonth() + 1, date.getDate()].map(twoDigits).join('-')
+//   const timeStr = [date.getHours(), date.getMinutes()].map(twoDigits).join(':')
 
-  const timeStr = [date.getHours(), date.getMinutes()].map(twoDigits).join(':')
-
-  return `${dateStr} ${timeStr}`
-}
+//   return `${dateStr} ${timeStr}`
+// }
 
 // console.log(printLong(tzStockholm.to('2016-01-31T12:00:00.000Z')));// sön 31 januari 2016 13:00 CET
 // console.log(printShort(tzStockholm.to('2016-01-31T12:00:00.000Z')));// 2016-01301 13:00

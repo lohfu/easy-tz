@@ -1,3 +1,3 @@
-import EET from '../EET'
+import EET from '../EET.js'
 
 export default EET

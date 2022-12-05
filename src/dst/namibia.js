@@ -1,4 +1,4 @@
-import nthOfMonth from '../util/nth-of-month'
+import nthOfMonth from '../util/nth-of-month.js'
 
 export default (date) => {
   const year = date.getUTCFullYear()

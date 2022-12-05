@@ -1,4 +1,4 @@
-import dst from '../../dst/usa'
+import dst from '../../dst/usa.js'
 
 export default {
   dst,

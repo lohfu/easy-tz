@@ -1,5 +1,5 @@
-import AEST from '../AEST'
-import AEDT from '../AEDT'
+import AEST from '../AEST.js'
+import AEDT from '../AEDT.js'
 
 export default {
   dst: null,
