@@ -1,5 +1,7 @@
-function twoDigits(val) {
-  return val >= 10 ? val : `0${val}`
+function padZeroes(nbr, length) {
+  nbr += ''
+
+  return '0'.repeat(Math.max(length - nbr.length), 0) + nbr
 }
 
 const convert = [
@@ -8,22 +10,22 @@ const convert = [
   [/yy|YY/, (date) => date.getFullYear().toString().slice(2)],
   [/YYYY|yyyy/, (date) => date.getFullYear()],
   ['M', (date) => date.getMonth() + 1],
-  ['MM', (date) => twoDigits(date.getMonth() + 1)],
+  ['MM', (date) => padZeroes(date.getMonth() + 1, 2)],
   ['MMM', (date, locale) => locale.months[date.getMonth()].slice(0, 3)],
   ['MMMM', (date, locale) => locale.months[date.getMonth()]],
   ['D', (date) => date.getDate()],
-  ['DD', (date) => twoDigits(date.getDate())],
+  ['DD', (date) => padZeroes(date.getDate(), 2)],
   ['ddd', (date, locale) => locale.days[date.getDay()].slice(0, 3)],
   ['dddd', (date, locale) => locale.days[date.getDay()]],
   ['H', (date) => date.getHours()],
-  ['HH', (date) => twoDigits(date.getHours())],
+  ['HH', (date) => padZeroes(date.getHours(), 2)],
   ['m', (date) => date.getMinutes()],
-  ['mm', (date) => twoDigits(date.getMinutes())],
+  ['mm', (date) => padZeroes(date.getMinutes(), 2)],
   ['s', (date) => date.getSeconds()],
-  ['ss', (date) => twoDigits(date.getSeconds())],
+  ['ss', (date) => padZeroes(date.getSeconds(), 2)],
   ['S', (date) => Math.floor(date.getMilliseconds() / 100)],
-  ['SS', (date) => Math.floor(date.getMilliseconds() / 10)],
-  ['SSS', (date) => date.getMilliseconds()],
+  ['SS', (date) => padZeroes(Math.floor(date.getMilliseconds() / 10), 2)],
+  ['SSS', (date) => padZeroes(date.getMilliseconds(), 3)],
 ].reverse()
 
 export default (locale, str, date) => {

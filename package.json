@@ -14,7 +14,7 @@
     "lint": "eslint --ext .cjs,.js,.mjs,.jsx .",
     "prepare": "husky install",
     "prepublishOnly": "yarn run lint && yarn run test",
-    "test": "node tests/index.js | tap-spec"
+    "test": "tape tests/**/*.js | tap-spec"
   },
   "keywords": [
     "timezone",
