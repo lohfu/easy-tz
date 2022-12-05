@@ -1,3 +1,3 @@
-import FET from '../FET';
+import FET from '../FET'
 
-export default FET;
+export default FET

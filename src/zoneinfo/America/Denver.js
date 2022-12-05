@@ -1,3 +1,3 @@
-import Mountain from '../US/Mountain';
+import Mountain from '../US/Mountain'
 
-export default Mountain;
+export default Mountain

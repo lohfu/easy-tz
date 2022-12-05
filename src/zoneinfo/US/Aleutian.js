@@ -1,3 +1,3 @@
-import hawaii from './Hawaii';
+import hawaii from './Hawaii'
 
-export default hawaii;
+export default hawaii

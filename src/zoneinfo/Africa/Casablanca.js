@@ -1,3 +1,3 @@
-import WET from '../WET';
+import WET from '../WET'
 
-export default WET;
+export default WET

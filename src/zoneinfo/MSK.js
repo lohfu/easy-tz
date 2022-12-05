@@ -1,2 +1,2 @@
 // TODO it was changed in 2014...
-export default [180, 'MSK', 'GMT+3', 'UTC+3'];
+export default [180, 'MSK', 'GMT+3', 'UTC+3']

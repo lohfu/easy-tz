@@ -1,3 +1,3 @@
-import GB from '../GB';
+import GB from '../GB'
 
-export default GB;
+export default GB

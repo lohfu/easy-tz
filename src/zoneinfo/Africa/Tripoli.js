@@ -1,3 +1,3 @@
-import EET from '../EET';
+import EET from '../EET'
 
-export default EET;
+export default EET

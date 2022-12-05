@@ -1,3 +1,3 @@
-import Central from '../US/Central';
+import Central from '../US/Central'
 
-export default Central;
+export default Central

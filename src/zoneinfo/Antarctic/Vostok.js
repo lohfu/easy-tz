@@ -1,1 +1,1 @@
-export default ['UTC+6', 'GMT+6', 360];
+export default ['UTC+6', 'GMT+6', 360]

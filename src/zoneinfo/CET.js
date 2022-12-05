@@ -1,1 +1,1 @@
-export default [60, 'CET', 'GMT+1', 'UTC+1'];
+export default [60, 'CET', 'GMT+1', 'UTC+1']

@@ -1,5 +1,5 @@
 function twoDigits(val) {
-  return val >= 10 ? val : `0${val}`;
+  return val >= 10 ? val : `0${val}`
 }
 
 const convert = [
@@ -24,23 +24,23 @@ const convert = [
   ['S', (date) => Math.floor(date.getMilliseconds() / 100)],
   ['SS', (date) => Math.floor(date.getMilliseconds() / 10)],
   ['SSS', (date) => date.getMilliseconds()],
-].reverse();
+].reverse()
 
 export default (locale, str, date) => {
-  if (!(date instanceof Date)) date = new Date(date);
+  if (!(date instanceof Date)) date = new Date(date)
 
   if (isNaN(date.getTime())) {
     // should return localized 'Invalid Date'
-    return date.toString();
+    return date.toString()
   }
 
   return convert.reduce((str, [pattern, fnc]) => {
-    const arr = str.split(pattern);
+    const arr = str.split(pattern)
 
     if (arr.length === 1) {
-      return arr[0];
+      return arr[0]
     }
 
-    return arr.join(fnc(date, locale));
-  }, str);
-};
+    return arr.join(fnc(date, locale))
+  }, str)
+}

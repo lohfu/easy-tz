@@ -1,3 +1,3 @@
-import EAT from '../EAT';
+import EAT from '../EAT'
 
-export default EAT;
+export default EAT

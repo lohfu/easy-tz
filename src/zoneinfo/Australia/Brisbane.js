@@ -1,3 +1,3 @@
-import AEST from '../AEST';
+import AEST from '../AEST'
 
-export default AEST;
+export default AEST

@@ -1,3 +1,3 @@
-import no from './no';
+import no from './no'
 
-export default no;
+export default no

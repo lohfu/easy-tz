@@ -1,3 +1,3 @@
-import GMT from '../GMT';
+import GMT from '../GMT'
 
-export default GMT;
+export default GMT

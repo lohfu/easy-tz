@@ -1,3 +1,3 @@
-import WAT from '../WAT';
+import WAT from '../WAT'
 
-export default WAT;
+export default WAT
